@@ -1,11 +1,11 @@
 body {
-    margin: 0;
+    margin: auto;
     padding: 2rem 0;
-    width: 100%;
+    width: auto;
     background: rgb(153, 0, 255);
     font-family: 'Inconsolata', monospace;
     text-align: center;
-    border: 10px solid orange;
+    border: 8px solid orange;
   }
 
   main {
@@ -15,7 +15,7 @@ body {
     border-radius: 5px;
     padding: 2rem 0;
   }
-  /*
+  
   h1 {
     margin: 3rem 1rem 6rem 1rem;
   }
@@ -34,7 +34,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
-    border: 10px solid black;
+    border: 5px solid black;
   }
   
   .artObject {
@@ -43,4 +43,3 @@ body {
     margin: 1rem;
     border: 10px solid orange;
   }
-*/
