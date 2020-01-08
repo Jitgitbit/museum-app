@@ -5,6 +5,7 @@ body {
     background: rgb(153, 0, 255);
     font-family: 'Inconsolata', monospace;
     text-align: center;
+    border: 10px solid orange;
   }
   
   main {
@@ -33,10 +34,12 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
+    border: 10px solid black;
   }
   
   .artObject {
     max-width: 80%;
     max-height: 20rem;
     margin: 1rem;
+    border: 10px solid orange;
   }
