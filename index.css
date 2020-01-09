@@ -34,6 +34,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
+    background: rgb(60, 50, 205);
     border: 5px solid black;
   }
   

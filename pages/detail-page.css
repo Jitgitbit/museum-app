@@ -35,3 +35,7 @@ body {
     margin: 1rem;
     border: 10px solid orange;
   }
+
+  #msg, #name {
+    border: 1px solid black;
+  }
