@@ -32,4 +32,25 @@ function submitComment() {
   
     inputField.value = null;
     textArea.value = null;
+
+    if(doesNotPassAllValidations(name, msg)){
+        return null
+      };
+  };
+
+/*
+  console.log(name);
+  console.log(msg);
+*/
+
+function doesNotPassAllValidations(name, msg) {
+    if (!name || !msg) {
+      alert('You forgot to fill in your name or message!')
+      return true;
+    }
+    if(msg.length > 280) {
+      alert('Your comment is too long')
+      return true;
+    }
+    return false;
   };
