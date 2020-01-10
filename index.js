@@ -326,6 +326,30 @@ const data = {
 
 const paintings = data.artObjects;
 //console.log(paintings);
+/*
+function isBigEnough(width) {
+  return width >= 1500;
+};
+
+let filteredPaintings = paintings.webImage.width.filter(isBigEnough);*/
+    /*
+    function isBigEnough(value) {
+      return value >= 10
+    }
+    
+    let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+    // filtered is [12, 130, 44]
+    */
+//const bigPaintings = paintings.filter(painting => paintings.webImage.width >= 1500);
+/*
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+*/
+
 
 const gallery = document.getElementById("gallery");
 console.log(gallery);
@@ -341,14 +365,60 @@ function displayPaintings(){
     const imgAltTitle = paintings[i].title;
     const imgUrl = paintings[i].webImage.url;
     const image = document.createElement("img");
+    const paintingWidth = paintings[i].webImage.width;
+    const paintingCreator = paintings[i].principalOrFirstMaker;
+    const paintingD = paintings[i].longTitle;
+    const paintingDate = paintingD.substr(paintingD.length - 4);
+    //var lastFive = id.substr(id.length - 5);
+    const paintingDateNumb = parseInt(paintingDate);
+    //const rightPaintingDate = slice(parseInt(paintings[i].longTitle));
+    console.log(paintingDate);
     image.setAttribute("class", "artObject");
     image.setAttribute("alt", imgAltTitle);
     image.setAttribute("src", imgUrl);
     imgAnchor.setAttribute("href", a_href);
-    imgAnchor.appendChild(image);
-    imgDiv.appendChild(imgAnchor);
-    gallery.appendChild(imgDiv);
+    if (paintingWidth >= 1500 && paintingCreator !== "Gerard van Honthorst" && paintingDate < 1800){
+      imgAnchor.appendChild(image);
+      imgDiv.appendChild(imgAnchor);
+      gallery.appendChild(imgDiv);
+    };
+    
   };
 };
 
 displayPaintings();
+
+
+//only display paintings with width bigger than 1500
+//It should not display any paintings created by Honthorst.
+//It should only display paintings which are created before 1800.
+
+/*
+function displayPaintings(){
+  for (let i=0; i < paintings.length; i++){
+    const imgAltTitle = paintings[i].title;
+    const imgUrl = paintings[i].webImage.url;
+    const paintingWidth = paintings[i].webImage.width;
+    const paintingCreator = paintings[i].principalOrFirstMaker;
+    console.log(paintingWidth);
+    for (let i=0; i < paintings.length - 9; i++){
+      if(paintingWidth >= 1500){
+        const imgDiv = document.createElement("div");
+        const imgAnchor = document.createElement("a");
+        const image = document.createElement("img");
+        image.setAttribute("class", "artObject");
+        image.setAttribute("alt", imgAltTitle);
+        image.setAttribute("src", imgUrl);
+        imgAnchor.setAttribute("href", a_href);
+        imgAnchor.appendChild(image);
+        imgDiv.appendChild(imgAnchor);
+        gallery.appendChild(imgDiv);
+      } else {
+        return false;
+      };  
+    };
+  };
+};
+
+displayPaintings();
+*/
